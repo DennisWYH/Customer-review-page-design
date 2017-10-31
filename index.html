@@ -1,0 +1,121 @@
+<!--Auther: Yunhai Wang-->
+<!--Date: 2017-10-30-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+    	<link rel = "stylesheet" href = "css.css"/>
+        <link rel = "stylesheet" href = "/BootStrap_css/bootstrap.min.css"/>
+        <meta http-equiv = "Content-Type" content = "text/html; charset = UTF-8">
+    </head>
+    
+     <body>
+         
+         <div id = "header">
+             <p id = "header-text"> Customer Reviews <p>
+         </div>
+         
+         <!-- General information area; contents in the white bar-->
+         
+        <div id = "container1">
+            <div id = "container1-1">
+                <nav>
+                    <p>Home > <span style= "color: #03C0A2; margin-bottom: 4px; font-family: arial, sans-serif;">Customer Reviews</span></p>
+                </nav>
+            </div>
+            <div id = "container1-2">
+                <div id = "container1-21">
+                    <img style = "margin-bottom:0px;" src = "images/255x29.png" alt = "Some prepared picture">
+                    <p><span style = "color:rgb(170,168,168); margin-bottom:0px;margin-top:0px;"><span style = "color:rgb(119, 118, 118);">296 reviews on Trustpilot</span></span></p>
+                    <p><span style = "color:rgb(170,168,168); margin-top:0px;">Latest reveiw 4 days ago</span></p>
+                    </br>
+                </div>
+                <div id = "container1-22">
+                    <p style = "color:rgb(146, 100, 175); font-size:22px; margin-bottom:4px">Excellent 9.5 <span style = "font-size:11px;color:grey;">from 0-10</span></p>
+                    <div id = "left">
+                        <img src = "images/5stars.png" alt="Some prepared picture">
+                    </div>
+                    <div id = "right">
+                        <button id = "button_review"onclick = "some page"><span style = "color:#03C0A2;">write a review</span></button>
+                    </div>
+                    <p style = "color:rgb(146, 100, 175); font-size:22px; margin-bottom:4px; margin-top:0px;">Average 8.9 <span style = "font-size:11px;color:grey;"> of all reviews</span></p>
+                    <div id = "left">
+                        <img src = "images/4stars.png" alt="Some prepared picture">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--         Filters and pagination -->
+        
+         <div id = "container-for-filters">
+             <select onchange = "filterByPage(this);" class = "selection-box">
+                 <optgroup label = "items per page">
+                     <option value = "10">10 reviews per page</option>
+                     <option value = "20">20 reviews per page</option>
+                     <option value = "50">50 reviews per page</option>
+             </select>
+             <select onchange = "filterByRating(this);" class = "selection-box">
+                 <optgroup label = "Filter by Rating">
+                     <option value = "-1">All range stars</option>
+                     <option value = "5">5 stars</option>
+                     <option value = "4">4 stars</option>
+                     <option value = "3">3 stars</option>
+                     <option value = "2">2 stars</option>
+                     <option value = "1">1 stars</option>
+                     <option value = "0">0 stars</option>
+             </select>
+             <div class = "div-for-inputbox">
+                 <img src = "images/search2.png" width = 15px/>
+                 <input type ="text" id ="searchInput" onkeyup = "search(this)" placeholder="Filter by name/title/review">
+             </div>
+             <div class = "pagination">
+                 <a class = "active" href = "#" onclick = "nextPage()">1</a>
+                 <a href = "#" onclick = "nextPage()">2</a>
+                 <a href = "#" onclick = "nextPage()">3</a>
+                 <a href = "#" onclick = "nextPage()">4</a>
+                 <a href = "#" onclick = "nextPage()">5</a>
+                 <a href = "#" id = "more_page">&raquo;</a>
+             </div>
+         </div>
+         <!--        Customer Review Area; The response area-->
+        <div>
+            <script>
+                //Define short-hand functions for convevinence
+                var $ = function( id ) { return document.getElementById( id ); };
+                var append = function( child ) { return document.body.appendChild( child ); };
+                var createElement  = function(element) {return document.createElement(element)};
+                
+                //Global variable to store numbers perPage, and rating;
+                var perPage = 10;
+                var rating = -1;
+                
+                var responseArea = createElement('div');
+                responseArea.id = "responseArea";
+                responseArea.className = "response";
+                
+                append(responseArea);
+            </script>
+        </div>
+        <!--     Footer   -->
+        <div id = "container-footer">
+            <footer>
+                <div class = "pagination" id = "pagination_footer">
+                    <a class = "active" href="#">1</a>
+                    <a href = "#">2</a>
+                    <a href = "#">3</a>
+                    <a href = "#">4</a>
+                    <a href = "#">5</a>
+                    <a href = "#" id = "more_page">&raquo;</a>
+                </div>
+            </footer>
+        </div>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        <script src = "jquery-1.11.1.min.js"></script>
+		<script src = "jscript.js"></script>
+	</body>
+</html>
